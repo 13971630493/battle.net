@@ -28,7 +28,8 @@ def test_blizzard_game_by_title_id_cn(cn, title_id, expected):
     assert Blizzard.game_by_title_id(title_id, cn) == expected
 
 
-def test_try_for_free_games_no_d3cn():
+def test_try_for_free_games():
+    assert Blizzard['prometheus'] not in Blizzard.try_for_free_games(cn=False)
     assert Blizzard['diablo3'] in Blizzard.try_for_free_games(cn=False)
     assert Blizzard['d3cn'] not in Blizzard.try_for_free_games(cn=False)
     # diablo3 not available for free in china

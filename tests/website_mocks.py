@@ -238,11 +238,6 @@ def backend_owned_games():
 
 
 @pytest.fixture
-def backend_no_classics():
-    return json.loads("""{ "classicGames": [] } """)
-
-
-@pytest.fixture
 def backend_classic_games():
     return json.loads("""
 {"classicGames": [

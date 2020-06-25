@@ -119,14 +119,16 @@ async def backend_mock():
     mock.get_ow_player_data = AsyncMock()
     return mock
 
+
 @pytest.fixture()
 def config_parser():
     return MagicMock()
 
+
 @pytest.fixture()
 def local_client_mock(config_parser):
     mock = MagicMock(spec=LocalClient)
-    mock.launch_game = AsyncMock()  # just an example of async method mock
+    mock.launch_game = AsyncMock()
     mock.config_parser = config_parser
     return mock
 
